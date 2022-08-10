@@ -1,2 +1,14 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import Row from '$lib/components/Row.svelte';
+	import { config } from '$lib/samples/sample-config';
+
+	let currentConfig = config;
+</script>
+
+<h1>CA JSON Layout Editor</h1>
+{#each currentConfig.boards as this_board }
+    <Row bind:row={this_board} />
+{/each}
+
+<pre>{JSON.stringify(currentConfig, undefined, "  ")}</pre>
+<a href="./sidepage">Go to side page</a>
