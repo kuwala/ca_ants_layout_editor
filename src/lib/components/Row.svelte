@@ -3,7 +3,7 @@
 	export let row: BoardRow;
 	export let id: number;
 	row.id = id;
-	export let removeFunc: void;
+	export let removeFunc: (id: number) => void;
 </script>
 <!-- <pre>{JSON.stringify(row)}</pre> -->
 <p>
